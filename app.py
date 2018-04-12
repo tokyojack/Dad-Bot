@@ -2,12 +2,12 @@ import requests
 from apscheduler.schedulers.blocking import BlockingScheduler
 from twitter import TwitterError, Api
 
-twitterAPI = Api(consumer_key='',
+twitter_api = Api(consumer_key='',
           consumer_secret='',
           access_token_key='',
           access_token_secret='')
 
-def getJoke():
+def get_joke():
     return requests.get(
         "https://icanhazdadjoke.com",
         headers={"Accept": "application/json"}
@@ -19,8 +19,11 @@ def tweet_message():
         print("--------- Stats ---------")
         print(f"Follower Count: {credentials.followers_count}")
         print(f"Friends Count: {credentials.friends_count}")
-        twitterAPI.PostUpdate(joke)
+        
+        joke = get_joke()
+        twitter_api.PostUpdate(joke)
         print(f"Tweeted out: {joke}")
+
     except TwitterError as exception:
         print(f"EXCEPTION: {exception}")
 
