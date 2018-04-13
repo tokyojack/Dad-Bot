@@ -1,4 +1,4 @@
-<h2  align="center">Dad-Bot</h2>
+<h2  align="center">Dad-Joke-Bot</h2>
 <p  align="center">A Twitter bot that tweet's our Dad jokes every hour https://twitter.com/DadJoke_Bot</p>
 
 <br/>
